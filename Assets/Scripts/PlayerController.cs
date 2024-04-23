@@ -8,8 +8,8 @@ public class playermovement : MonoBehaviour
     [Space(10)]
 
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float playerDrag = 6f; //fixes drag against floor
-    [SerializeField] private float movementMultiplier = 10f; //increases speed alongside drag
+    [SerializeField] private float playerDrag = 6f; //drag to stop player speeding up
+    [SerializeField] private float movementMultiplier = 10f; //increases speed to mitigate drag
 
     private float horizontalMovement;
     private float verticalMovement;
@@ -21,7 +21,7 @@ public class playermovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        rb.freezeRotation = true; //physics wont affect player rotation
     }
 
     private void Update()
@@ -40,12 +40,12 @@ public class playermovement : MonoBehaviour
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
 
-        //moveDirection += moveDirection.normalized;
-        moveDirection = (transform.right * horizontalMovement + transform.forward * verticalMovement * Time.deltaTime); 
+        moveDirection = (transform.forward * verticalMovement + transform.right * horizontalMovement).normalized;
+        //using vertical before horizontal fixes diagonal movement? (why?)
     }
 
     private void MovePlayer()
     {
-        rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+        rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
     }
 }
