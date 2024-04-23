@@ -7,9 +7,14 @@ public class playermovement : MonoBehaviour
     [Header("= Movement =")]
     [Space(10)]
 
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float playerDrag = 6f; //drag to stop player speeding up
-    [SerializeField] private float movementMultiplier = 10f; //increases speed to mitigate drag
+    [SerializeField]
+    private float moveSpeed = 5f;
+
+    [SerializeField]
+    private float playerDrag = 6f; //drag to stop player speeding up
+
+    [SerializeField]
+    private float movementMultiplier = 10f; //increases speed to mitigate drag
 
     private float horizontalMovement;
     private float verticalMovement;
