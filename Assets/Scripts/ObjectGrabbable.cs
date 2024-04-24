@@ -17,6 +17,7 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         trashBagRB.useGravity = false; //disables the trash from falling
+        
     }
 
     public void DropObject()
