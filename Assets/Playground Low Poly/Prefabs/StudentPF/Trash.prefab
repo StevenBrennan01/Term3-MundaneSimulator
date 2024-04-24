@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2031628152720507070}
   - component: {fileID: 8995757328091695674}
   - component: {fileID: 5259680975904676202}
+  - component: {fileID: 8898505681824905466}
   - component: {fileID: 5688569176052014200}
   - component: {fileID: 218724898507042528}
   m_Layer: 6
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8372152746554636536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.16, y: 9.77, z: -18.39}
+  m_LocalPosition: {x: -57.39898, y: 10.468082, z: -18.502491}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,6 +86,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8898505681824905466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372152746554636536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2a9cbef5f8aa446b547beb8ae10da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &5688569176052014200
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107,9 +120,9 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &218724898507042528

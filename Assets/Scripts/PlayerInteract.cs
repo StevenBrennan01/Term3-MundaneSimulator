@@ -2,32 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField]
-    private LayerMask pickableLayerMask;
+    private LayerMask pickupLayerMask;
 
     [SerializeField]
     private Transform playerCameraTransform;
 
     [SerializeField]
+    private Transform objectGrabPointTransform;
+
+    [SerializeField]
     private float hitRange = 2f;
 
-    private RaycastHit hit;
+    public ObjectGrabbable objectGrabbable;
 
+    private RaycastHit raycastHit;
 
     private void Update()
     {
-        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * hitRange, Color.blue);
-        if (Physics.Raycast
-            (playerCameraTransform.position, 
-            playerCameraTransform.forward, 
-            out hit, hitRange, 
-            pickableLayerMask))
+        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * hitRange, Color.magenta);
+
+        ObjectInteract();
+    }
+
+    #region RayCast
+    public void ObjectInteract()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            //do something (E to pickup)
+            if (objectGrabbable == null) //if player is not currently holding an object
+            {
+                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, hitRange, pickupLayerMask))
+                {
+                    if (raycastHit.transform.TryGetComponent(out objectGrabbable)) //only going to be using one LayerMask anyway?
+                    {
+                        objectGrabbable.GrabObject(objectGrabPointTransform);
+                    }
+                }
+            }
+            else //player is currently holding an object
+            {
+                objectGrabbable.DropObject();
+                objectGrabbable = null;
+            }
         }
     }
-   
- }
+    #endregion
+    
+    //public void Pickup(InputAction.CallbackContext button)
+    //{
+    //    if (button.performed && isTouchingTrash)
+    //    {
+
+    //    }
+    //}
+}
