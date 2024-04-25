@@ -17,6 +17,6 @@ public class TrashValues : MonoBehaviour
         scoreManager.GetComponent<ScoreManager>();
     }
 
-    
 
+    
 }

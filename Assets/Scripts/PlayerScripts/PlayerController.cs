@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class playermovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [HideInInspector] public Vector2 movDir;
+
     [Header("= Movement =")]
     [Space(10)]
 
@@ -16,9 +17,6 @@ public class playermovement : MonoBehaviour
 
     [SerializeField]
     private float movementMultiplier = 10f; //increases speed to mitigate drag
-
-    private float horizontalMovement;
-    private float verticalMovement;
 
     private Rigidbody rb;
 
@@ -32,26 +30,14 @@ public class playermovement : MonoBehaviour
 
     private void Update()
     {
-        MyInput();
         rb.drag = playerDrag;
     }
 
-    private void FixedUpdate()
+    public void Walk()
     {
-        MovePlayer();
-    }
-
-    private void MyInput()
-    {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
-
-        moveDirection = (transform.forward * verticalMovement + transform.right * horizontalMovement).normalized;
-        //using vertical before horizontal fixes diagonal movement? (why?)
-    }
-
-    private void MovePlayer()
-    {
+        moveDirection = (transform.forward * movDir.y + transform.right * movDir.x).normalized;
+        //using vertical before horizontal fixes diagonal movement, 
         rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+        
     }
 }

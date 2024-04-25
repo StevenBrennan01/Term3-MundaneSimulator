@@ -26,29 +26,27 @@ public class PlayerInteract : MonoBehaviour
     {
         Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.magenta);
 
-        ObjectInteract();
+        //ObjectInteract();
     }
 
     #region RayCast
     public void ObjectInteract()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        Debug.Log("Interact Fired");
+        if (objectGrabbable == null) //if player is not currently holding an object
         {
-            if (objectGrabbable == null) //if player is not currently holding an object
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
             {
-                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
+                if (raycastHit.transform.TryGetComponent(out objectGrabbable)) //only going to be using one LayerMask anyway?
                 {
-                    if (raycastHit.transform.TryGetComponent(out objectGrabbable)) //only going to be using one LayerMask anyway?
-                    {
-                        objectGrabbable.GrabObject(objectGrabPointTransform);
-                    }
+                    objectGrabbable.GrabObject(objectGrabPointTransform);
                 }
             }
-            else //player is currently holding an object
-            {
-                objectGrabbable.DropObject();
-                objectGrabbable = null;
-            }
+        }
+        else //player is currently holding an object
+        {
+            objectGrabbable.DropObject();
+            objectGrabbable = null;
         }
     }
     #endregion
