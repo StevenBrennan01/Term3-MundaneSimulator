@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-
     private Rigidbody trashBagRB;
     private Transform objectGrabPointTransform;
 

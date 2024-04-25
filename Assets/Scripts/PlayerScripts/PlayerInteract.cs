@@ -52,12 +52,4 @@ public class PlayerInteract : MonoBehaviour
         }
     }
     #endregion
-    
-    //public void Pickup(InputAction.CallbackContext button)
-    //{
-    //    if (button.performed && isTouchingTrash)
-    //    {
-
-    //    }
-    //}
 }

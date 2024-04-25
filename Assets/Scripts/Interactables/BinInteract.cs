@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class BinInteract : MonoBehaviour
 {
-
     [SerializeField]
     private Animator binAnim;
 
