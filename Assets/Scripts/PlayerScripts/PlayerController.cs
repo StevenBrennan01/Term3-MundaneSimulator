@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void Walk()
     {
-        moveDirection = (transform.forward * movDir.y + transform.right * movDir.x).normalized; //using vertical before horizontal fixes diagonal movement, 
+        moveDirection = (transform.forward * movDir.y + transform.right * movDir.x).normalized;
         rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
     }
 }

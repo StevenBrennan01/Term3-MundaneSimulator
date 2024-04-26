@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    private PlayerInputActions InputActions; //generated script
+    private PlayerInputActions InputActions; //auto generated script
     private PlayerController ControllerSCR;
     private PlayerInteract InteractSCR;
 

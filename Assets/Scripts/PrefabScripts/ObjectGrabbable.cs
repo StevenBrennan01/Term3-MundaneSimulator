@@ -29,13 +29,13 @@ public class ObjectGrabbable : MonoBehaviour
         myCollider.enabled = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (objectGrabPointTransform != null)
         {
             float lerpValue = 10f;
             Vector3 moveToNewPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
-            myCollider.enabled = false;
+            //myCollider.enabled = false;
             transform.rotation = objectGrabPointTransform.rotation;
             trashBagRB.MovePosition(objectGrabPointTransform.position);
         }

@@ -25,14 +25,11 @@ public class PlayerInteract : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.magenta);
-
-        //ObjectInteract();
     }
 
-    #region RayCast
     public void ObjectInteract()
     {
-        Debug.Log("Interact Fired");
+        //Debug.Log("Interact Fired");
         if (objectGrabbable == null) //if player is not currently holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
@@ -49,5 +46,4 @@ public class PlayerInteract : MonoBehaviour
             objectGrabbable = null;
         }
     }
-    #endregion
 }
