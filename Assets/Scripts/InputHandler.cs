@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    private PlayerInputActions InputActions;
-    private PlayerInteract InteractSCR;
+    private PlayerInputActions InputActions; //generated script
     private PlayerController ControllerSCR;
+    private PlayerInteract InteractSCR;
 
     private Coroutine MoveCR;
 
@@ -17,8 +17,8 @@ public class InputHandler : MonoBehaviour
     private void Awake()
     {
         InputActions = new PlayerInputActions();
-        InteractSCR = GetComponent<PlayerInteract>();
         ControllerSCR = GetComponent<PlayerController>();
+        InteractSCR = GetComponent<PlayerInteract>();
     }
 
     private void OnEnable()

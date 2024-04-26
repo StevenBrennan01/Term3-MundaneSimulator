@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [HideInInspector] public Vector2 movDir;
-
     [Header("= Movement =")]
     [Space(10)]
 
@@ -20,7 +18,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
 
-    Vector3 moveDirection;
+    [HideInInspector] public Vector2 movDir;
+
+    private Vector3 moveDirection;
 
     private void Awake()
     {
@@ -35,9 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void Walk()
     {
-        moveDirection = (transform.forward * movDir.y + transform.right * movDir.x).normalized;
-        //using vertical before horizontal fixes diagonal movement, 
+        moveDirection = (transform.forward * movDir.y + transform.right * movDir.x).normalized; //using vertical before horizontal fixes diagonal movement, 
         rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-        
     }
 }
