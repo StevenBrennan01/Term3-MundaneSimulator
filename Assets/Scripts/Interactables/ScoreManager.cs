@@ -14,12 +14,12 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         currentScore = 0;
-        quotaValueText.text = " : " + currentScore;
+        quotaValueText.text = "Quota: " + currentScore + " / 50";
     }
 
     public void IncreaseQuota(int ScoreToAdd)
     {
         currentScore += ScoreToAdd;
-        quotaValueText.text = ": " + currentScore; ;
+        quotaValueText.text = " : " + currentScore; ;
     }
 }

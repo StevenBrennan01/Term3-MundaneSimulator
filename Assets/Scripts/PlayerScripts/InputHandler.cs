@@ -43,13 +43,12 @@ public class InputHandler : MonoBehaviour
 
     private void InteractButton(InputAction.CallbackContext context)
     {
-        Debug.Log("Input Detected!");
         InteractSCR.ObjectInteract();
     }
 
-    private void MovementActionPerformed(InputAction.CallbackContext context)
+    private void MovementActionPerformed(InputAction.CallbackContext value)
     {
-        ControllerSCR.movDir = context.ReadValue<Vector2>();
+        ControllerSCR.movDir = value.ReadValue<Vector2>();
         IsMoving = true;
         if (MoveCR == null)
         {
@@ -57,9 +56,9 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    private void MovementActionCanceled(InputAction.CallbackContext context)
+    private void MovementActionCanceled(InputAction.CallbackContext value)
     {
-        ControllerSCR.movDir = context.ReadValue<Vector2>();
+        ControllerSCR.movDir = value.ReadValue<Vector2>();
         IsMoving = false;
         if (MoveCR != null)
         {

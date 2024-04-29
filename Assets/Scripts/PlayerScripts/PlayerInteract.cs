@@ -29,12 +29,11 @@ public class PlayerInteract : MonoBehaviour
 
     public void ObjectInteract()
     {
-        //Debug.Log("Interact Fired");
         if (objectGrabbable == null) //if player is not currently holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
             {
-                if (raycastHit.transform.TryGetComponent(out objectGrabbable)) //only going to be using one LayerMask anyway?
+                if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                 {
                     objectGrabbable.GrabObject(objectGrabPointTransform);
                 }
