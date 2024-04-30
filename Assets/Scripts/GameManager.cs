@@ -11,22 +11,19 @@ public class GameManager : MonoBehaviour
     private GameObject[] trashObjects;
 
     [SerializeField]
-    private Transform[] spawnPositions; //spawn locations
+    private Transform[] spawnPositions;
+
+    private int spawnAmount;
 
         [Header("= Spawn Values =")]
+        [Header("(# of Trash spawned is random between min and max set)")]
         [Space(15)]
-
-    [SerializeField]
-    private int spawnAmount;
-    [Space(10)]
 
     [SerializeField]
     private int minToSpawn;
 
     [SerializeField]
     private int maxToSpawn;
-
-    //private int amountAlreadySpawned;
 
     private void Awake()
     {
@@ -48,12 +45,6 @@ public class GameManager : MonoBehaviour
             Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position, Quaternion.identity);
         }
 
-        //spawnAmount = Random.Range(minToSpawn, maxToSpawn);
-
-        //while (amountAlreadySpawned < spawnAmount)
-        //{
-        //    Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position, Quaternion.identity);
-        //    amountAlreadySpawned++;
-        //}
+        spawnAmount = Random.Range(minToSpawn, maxToSpawn);
     }
 }
