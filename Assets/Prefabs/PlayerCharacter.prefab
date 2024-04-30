@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2608082719907918032}
   - component: {fileID: 2139148451835466308}
   - component: {fileID: 8684404987063606076}
-  - component: {fileID: 1713648321666249497}
   - component: {fileID: 2096124860498101230}
   - component: {fileID: 2959744308640410214}
   - component: {fileID: 56771531150990124}
@@ -88,36 +87,6 @@ CapsuleCollider:
   m_Height: 1.9248095
   m_Direction: 1
   m_Center: {x: -0.011274338, y: -0.04567671, z: -0.02668333}
---- !u!114 &1713648321666249497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899598873635448925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 3
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &2096124860498101230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247c07c83e380734ab750e4d7850b942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.3
+  moveSpeed: 0.8
   playerDrag: 6
   movementMultiplier: 8
   movDir: {x: 0, y: 0}

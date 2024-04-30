@@ -17,19 +17,31 @@ public class GameManager : MonoBehaviour
     private Transform[] spawnPositions;
 
     [SerializeField]
-    private int[] spawnCount;
+    private int spawnAmount;
+
+    [SerializeField]
+    private int randSpawnSpot;
 
     private void Start()
     {
         if (trashObjects.Length == 0) Debug.LogError("No trash assigned, assign some in the inspector");
         if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned");
+        
+
+    }
+
+    private void Update()
+    {
+        SpawnTrash();
     }
 
     private void SpawnTrash()
-    {
-        Instantiate(trashObjects[Random.Range(0, spawnCount.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)].position, Quaternion.identity);
+    {     
+        randSpawnSpot = Random.Range(0, spawnPositions.Length);
+
+        for (int i = 0; i < trashObjects.Length; i++)
+        {
+            Instantiate(trashObjects[i-1], spawnPositions[randSpawnSpot].transform.position, Quaternion.identity);
+            //spawnAmount++;
+        }
     }
-
-
-
-}

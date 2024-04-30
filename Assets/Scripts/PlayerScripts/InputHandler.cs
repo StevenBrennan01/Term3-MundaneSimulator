@@ -41,11 +41,10 @@ public class InputHandler : MonoBehaviour
         InputActions.Player.Interact.Disable();
     }
 
-    private void InteractButton(InputAction.CallbackContext context)
+    private void InteractButton(InputAction.CallbackContext button)
     {
         InteractSCR.ObjectInteract();
     }
-
     private void MovementActionPerformed(InputAction.CallbackContext value)
     {
         ControllerSCR.movDir = value.ReadValue<Vector2>();
@@ -66,7 +65,6 @@ public class InputHandler : MonoBehaviour
             MoveCR = null;
         }
     }
-
     IEnumerator CR_MoveUpdate()
     {
         while (IsMoving)

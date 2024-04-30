@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
 
     [SerializeField]
-    private float moveSpeed = 5f;
+    private float moveSpeed = 200f;
 
     [SerializeField]
     private float playerDrag = 6f; //drag to stop player speeding up
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public Vector2 movDir;
 
-    private Vector3 moveDirection;
+    private Vector3 moveDirectionNormalized;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void Walk()
     {
-        moveDirection = (transform.forward * movDir.y + transform.right * movDir.x).normalized;
-        rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+        moveDirectionNormalized = (transform.forward * movDir.y + transform.right * movDir.x).normalized;
+        rb.AddForce(moveDirectionNormalized * moveSpeed * movementMultiplier * Time.deltaTime, ForceMode.Acceleration);
     }
 }

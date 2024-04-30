@@ -20,6 +20,6 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseQuota(int ScoreToAdd)
     {
         currentScore += ScoreToAdd;
-        quotaValueText.text = " : " + currentScore; ;
+        quotaValueText.text = "Quota: " + currentScore + " / 50";
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-    [SerializeField]
     private Transform objectGrabPointTransform;
 
     private Rigidbody trashBagRB;
@@ -36,8 +35,10 @@ public class ObjectGrabbable : MonoBehaviour
         if (objectGrabPointTransform != null)
         {
             float lerpValue = 10f;
+
             Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
             transform.rotation = objectGrabPointTransform.rotation;
+            transform.Rotate(0, -90, 0);
             trashBagRB.MovePosition(newPosition);
         }
     }
