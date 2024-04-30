@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2324686264800643978}
   - component: {fileID: 2366661581239335791}
   m_Layer: 6
-  m_Name: canTrash
+  m_Name: canTrashRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2a9cbef5f8aa446b547beb8ae10da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectGrabPointTransform: {fileID: 0}
 --- !u!33 &4069442185370850102
 MeshFilter:
   m_ObjectHideFlags: 0
