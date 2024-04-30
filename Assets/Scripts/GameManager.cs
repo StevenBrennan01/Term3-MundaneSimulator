@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         if (trashObjects.Length == 0) Debug.LogError("No trash assigned, assign some in the inspector");
         if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned");
-        
+
 
     }
 
@@ -36,12 +36,13 @@ public class GameManager : MonoBehaviour
     }
 
     private void SpawnTrash()
-    {     
+    {
         randSpawnSpot = Random.Range(0, spawnPositions.Length);
 
         for (int i = 0; i < trashObjects.Length; i++)
         {
-            Instantiate(trashObjects[i-1], spawnPositions[randSpawnSpot].transform.position, Quaternion.identity);
+            Instantiate(trashObjects[i - 1], spawnPositions[randSpawnSpot].transform.position, Quaternion.identity);
             //spawnAmount++;
         }
     }
+}
