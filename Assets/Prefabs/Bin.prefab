@@ -47,7 +47,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -214,8 +214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.60047734, y: 0.89248335, z: 0.582614}
-  m_Center: {x: -0.090471916, y: 0.44238582, z: 0.18296604}
+  m_Size: {x: 0.60047734, y: 0.7381109, z: 0.582614}
+  m_Center: {x: -0.090471916, y: 0.36519873, z: 0.18296604}
 --- !u!1 &3135847394833703194
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 8704120107750566469}
   - component: {fileID: 6905402887565905936}
   m_Layer: 0
-  m_Name: Lid
+  m_Name: BinLid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

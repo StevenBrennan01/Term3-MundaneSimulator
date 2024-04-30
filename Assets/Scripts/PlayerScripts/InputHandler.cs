@@ -8,7 +8,7 @@ public class InputHandler : MonoBehaviour
 {
     private PlayerInputActions InputActions; //auto generated script
     private PlayerController ControllerSCR;
-    private PlayerInteract InteractSCR;
+    private PlayerPickup InteractSCR;
 
     private Coroutine MoveCR;
 
@@ -18,7 +18,7 @@ public class InputHandler : MonoBehaviour
     {
         InputActions = new PlayerInputActions();
         ControllerSCR = GetComponent<PlayerController>();
-        InteractSCR = GetComponent<PlayerInteract>();
+        InteractSCR = GetComponent<PlayerPickup>();
     }
 
     private void OnEnable()

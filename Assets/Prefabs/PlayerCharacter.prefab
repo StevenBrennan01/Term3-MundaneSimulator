@@ -36,7 +36,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1032128185831325176}
-  - {fileID: 3627581780814717603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2139148451835466308
@@ -85,10 +84,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43455315
+  m_Radius: 0.40786982
   m_Height: 1.9248095
   m_Direction: 1
-  m_Center: {x: -0.011274338, y: -0.04567671, z: 0}
+  m_Center: {x: -0.011274338, y: -0.04567671, z: -0.02668333}
 --- !u!114 &1713648321666249497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4294967295
   playerCameraTransform: {fileID: 1032128185831325176}
   objectGrabPointTransform: {fileID: 3627581780814717603}
   rayRange: 2
@@ -189,12 +188,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4426195348937907788}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.01, y: 0.147, z: 0.924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2608082719907918032}
+  m_Father: {fileID: 1032128185831325176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5216797472823075389
 GameObject:
@@ -227,7 +226,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3627581780814717603}
   m_Father: {fileID: 2608082719907918032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3560744444576007598

@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerPickup : MonoBehaviour
 {
     [SerializeField]
     private LayerMask pickupLayerMask;
@@ -25,11 +25,11 @@ public class PlayerInteract : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.magenta);
-    }
+    } // ==!!   remove this when game is complete   !!==
 
     public void ObjectInteract()
     {
-        if (objectGrabbable == null) //if player is not currently holding an object
+        if (objectGrabbable == null) //player is not currently holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
             {
@@ -37,7 +37,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     objectGrabbable.GrabObject(objectGrabPointTransform);
                 }
-            }
+            } 
         }
         else //player is currently holding an object
         {

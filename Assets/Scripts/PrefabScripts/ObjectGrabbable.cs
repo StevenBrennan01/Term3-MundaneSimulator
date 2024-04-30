@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour
 {
-    private Rigidbody trashBagRB;
+    [SerializeField]
     private Transform objectGrabPointTransform;
+
+    private Rigidbody trashBagRB;
 
     private Collider myCollider;
 
@@ -19,7 +21,7 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         trashBagRB.useGravity = false; //disables the trash from falling
-        
+        myCollider.enabled = false;
     }
 
     public void DropObject()
@@ -34,10 +36,9 @@ public class ObjectGrabbable : MonoBehaviour
         if (objectGrabPointTransform != null)
         {
             float lerpValue = 10f;
-            Vector3 moveToNewPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
-            //myCollider.enabled = false;
+            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
             transform.rotation = objectGrabPointTransform.rotation;
-            trashBagRB.MovePosition(objectGrabPointTransform.position);
+            trashBagRB.MovePosition(newPosition);
         }
     }
 }
