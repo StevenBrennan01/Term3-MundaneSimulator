@@ -28428,37 +28428,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1092660063974052378, guid: c6627f54933071643bb11dea6f0e6240, type: 3}
   m_PrefabInstance: {fileID: 2024524582}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2026091690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2026091691}
-  m_Layer: 0
-  m_Name: TrashObjects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2026091691
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026091690}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2053090965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29630,7 +29599,6 @@ MonoBehaviour:
   - {fileID: 660592872}
   minToSpawn: 15
   maxToSpawn: 20
-  spawnAmount: 0
 --- !u!114 &2127440119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30352,6 +30320,5 @@ SceneRoots:
   - {fileID: 5452742279103220726}
   - {fileID: 2112468940}
   - {fileID: 2022310174}
-  - {fileID: 2026091691}
   - {fileID: 1369595578}
   - {fileID: 355215925}
