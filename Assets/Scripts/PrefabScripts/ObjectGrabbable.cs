@@ -10,6 +10,9 @@ public class ObjectGrabbable : MonoBehaviour
 
     private Collider myCollider;
 
+    [SerializeField]
+    private int trashValue;
+
     private void Awake()
     {
         trashBagRB = GetComponent<Rigidbody>();

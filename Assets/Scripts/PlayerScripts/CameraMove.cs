@@ -11,7 +11,6 @@ public class MouseLook : MonoBehaviour
     [SerializeField] 
     private Transform playerBody;
 
-
     private float xRotation;
 
     void Start()

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5510419276884156941}
   - component: {fileID: 5020084529153771809}
   - component: {fileID: 1575998459461861315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: canCrushedBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2a9cbef5f8aa446b547beb8ae10da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trashValue: 5
 --- !u!33 &2935502042620985845
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -158,7 +159,7 @@ GameObject:
   - component: {fileID: 9181224253660339609}
   - component: {fileID: 4530635305712542938}
   - component: {fileID: 5658586782745871918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ring Pull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

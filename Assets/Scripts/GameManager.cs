@@ -44,7 +44,5 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position, Quaternion.identity);
         }
-
-        spawnAmount = Random.Range(minToSpawn, maxToSpawn);
     }
 }

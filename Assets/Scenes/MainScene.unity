@@ -9028,7 +9028,7 @@ Transform:
   m_GameObject: {fileID: 665842717}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -55.884, y: 13.499, z: -25.034}
+  m_LocalPosition: {x: -56.564, y: 9.614, z: -25.034}
   m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29556,6 +29556,9 @@ MonoBehaviour:
   trashObjects:
   - {fileID: 2984268539215478521, guid: 92cb02106cb3cc243808c8e62470174c, type: 3}
   - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
+  - {fileID: 10657068676566687, guid: 3af47aa23425e3c44b5be3d082a74f79, type: 3}
+  - {fileID: 6143752882634769234, guid: 20f6fca5559075148b1e6d06957f81ea, type: 3}
+  - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
   spawnPositions:
   - {fileID: 6172665288662275580}
   - {fileID: 445812805}
@@ -29597,8 +29600,8 @@ MonoBehaviour:
   - {fileID: 1679766662}
   - {fileID: 485754026}
   - {fileID: 660592872}
-  minToSpawn: 15
-  maxToSpawn: 20
+  minToSpawn: 10
+  maxToSpawn: 13
 --- !u!114 &2127440119
 MonoBehaviour:
   m_ObjectHideFlags: 0
