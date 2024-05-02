@@ -15,17 +15,16 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField]
     private Transform objectGrabPointTransform;
 
-    [SerializeField]
-    private float rayRange = 2f;
+    private float rayRange = 2.5f;
 
     private ObjectGrabbable objectGrabbable;
 
     private RaycastHit raycastHit;
 
     private void Update()
-    {
+    { // ==!!   remove update when game is complete   !!==
         Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.magenta);
-    } // ==!!   remove this when game is complete   !!==
+    } // ==!!   remove update when game is complete   !!==
 
     public void ObjectInteract()
     {
@@ -39,7 +38,7 @@ public class PlayerPickup : MonoBehaviour
                 }
             } 
         }
-        else //player is currently holding an object
+        else //player is holding an object
         {
             objectGrabbable.DropObject();
             objectGrabbable = null;

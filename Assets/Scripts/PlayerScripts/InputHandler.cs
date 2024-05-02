@@ -70,7 +70,7 @@ public class InputHandler : MonoBehaviour
         while (IsMoving)
         {
             ControllerSCR.Walk();
-            yield return null;
+            yield return null; //make sure to return null, this is what was missing
         }
     }
 }
