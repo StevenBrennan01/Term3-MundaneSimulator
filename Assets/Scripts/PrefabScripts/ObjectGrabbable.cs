@@ -37,7 +37,7 @@ public class ObjectGrabbable : MonoBehaviour
     {
         if (objectGrabPointTransform != null)
         {
-            float lerpValue = 10f;
+            float lerpValue = 20f;
 
             Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
             transform.rotation = objectGrabPointTransform.rotation;

@@ -7,14 +7,14 @@ using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public static CountdownTimer instance; //{ get; private set; }
+    public static CountdownTimer instance;
 
     [SerializeField]
     private TextMeshProUGUI timeText;
 
     private TimeSpan timePlaying;
-    private bool timerGoing;
 
+    private bool timerGoing;
     private float timeElapsed;
 
     private void Awake()

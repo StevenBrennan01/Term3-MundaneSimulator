@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Scripting.APIUpdating;
 
 public class InputHandler : MonoBehaviour
 {
@@ -23,28 +24,25 @@ public class InputHandler : MonoBehaviour
 
     private void OnEnable()
     {
+        InputActions.Player.Movement.Enable();
         InputActions.Player.Movement.performed += MovementActionPerformed;
         InputActions.Player.Movement.canceled += MovementActionCanceled;
-        InputActions.Player.Movement.Enable();
 
-        InputActions.Player.Interact.performed += InteractButton;
         InputActions.Player.Interact.Enable();
+        InputActions.Player.Interact.performed += InteractButton;
     }
 
     private void OnDisable()
     {
+        InputActions.Player.Movement.Disable();
         InputActions.Player.Movement.performed -= MovementActionPerformed;
         InputActions.Player.Movement.canceled -= MovementActionCanceled;
-        InputActions.Player.Movement.Disable();
 
-        InputActions.Player.Interact.performed -= InteractButton;
         InputActions.Player.Interact.Disable();
+        InputActions.Player.Interact.performed -= InteractButton;
     }
 
-    private void InteractButton(InputAction.CallbackContext button)
-    {
-        InteractSCR.ObjectInteract();
-    }
+    #region Movement Method , Performed & Canceled
     private void MovementActionPerformed(InputAction.CallbackContext value)
     {
         ControllerSCR.movDir = value.ReadValue<Vector2>();
@@ -65,6 +63,15 @@ public class InputHandler : MonoBehaviour
             MoveCR = null;
         }
     }
+    #endregion
+
+    #region Interact Method
+    private void InteractButton(InputAction.CallbackContext button)
+    {
+        InteractSCR.ObjectInteract();
+    }
+    #endregion
+
     IEnumerator CR_MoveUpdate()
     {
         while (IsMoving)
