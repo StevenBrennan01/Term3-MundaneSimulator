@@ -20,14 +20,24 @@ public class TrashPiece : MonoBehaviour
 
         _scoreManagerSCR = FindObjectOfType<ScoreManager>(); //for getting scripts located elsewhere in the project (memory or gameobject)
 
-        _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>(); //for getting scripts located elsewhere, but explicitly showing where it would be found.
+        //_scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>(); //for getting scripts located elsewhere, but explicitly showing where it would be found.
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "trashCollect")
+        {
+            _scoreManagerSCR.IncreaseQuota(objectValue);
+            Destroy(this.gameObject);
+        }
+    }
+
+    #region ObjectInteraction
     public void GrabObject(Transform objectGrabPointTransform)
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         trashBagRB.useGravity = false; //disables the trash from falling
-        myCollider.enabled = false;
+        myCollider.enabled = false; //disables collider when held
     }
 
     public void DropObject()
@@ -49,13 +59,6 @@ public class TrashPiece : MonoBehaviour
             trashBagRB.MovePosition(newPosition);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "trashCollect")
-        {
-            _scoreManagerSCR.IncreaseQuota(objectValue);
-            Destroy(this.gameObject);
-        }
-    }
+    #endregion
 }
+
