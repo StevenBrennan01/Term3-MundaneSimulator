@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectGrabbable : MonoBehaviour
+public class TrashPiece : MonoBehaviour
 {
     private Transform objectGrabPointTransform;
-
     private Rigidbody trashBagRB;
-
     private Collider myCollider;
 
+    private ScoreManager _scoreManagerSCR;
+
     [SerializeField]
-    private int trashValue;
+    private int objectValue;
 
     private void Awake()
     {
         trashBagRB = GetComponent<Rigidbody>();
         myCollider = GetComponent<Collider>();
+
+        _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>();
     }
 
     public void GrabObject(Transform objectGrabPointTransform)
@@ -43,6 +45,15 @@ public class ObjectGrabbable : MonoBehaviour
             transform.rotation = objectGrabPointTransform.rotation;
             transform.Rotate(0, -90, 0);
             trashBagRB.MovePosition(newPosition);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "trashCollect")
+        {
+            _scoreManagerSCR.IncreaseQuota(objectValue);
+            Destroy(this.gameObject);
         }
     }
 }

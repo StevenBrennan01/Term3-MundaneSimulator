@@ -15,9 +15,9 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField]
     private Transform objectGrabPointTransform;
 
-    private float rayRange = 2.5f;
+    private float rayRange = 2.55f;
 
-    private ObjectGrabbable objectGrabbable;
+    private TrashPiece _trashPieceSCR;
 
     private RaycastHit raycastHit;
 
@@ -28,20 +28,20 @@ public class PlayerPickup : MonoBehaviour
 
     public void ObjectInteract()
     {
-        if (objectGrabbable == null) //player is not currently holding an object
+        if (_trashPieceSCR == null) //player is not currently holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
             {
-                if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+                if (raycastHit.transform.TryGetComponent(out _trashPieceSCR))
                 {
-                    objectGrabbable.GrabObject(objectGrabPointTransform);
+                    _trashPieceSCR.GrabObject(objectGrabPointTransform);
                 }
             } 
         }
         else //player is holding an object
         {
-            objectGrabbable.DropObject();
-            objectGrabbable = null;
+            _trashPieceSCR.DropObject();
+            _trashPieceSCR = null;
         }
     }
 }
