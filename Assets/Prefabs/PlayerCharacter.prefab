@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247c07c83e380734ab750e4d7850b942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.8
+  moveSpeed: 205
   playerDrag: 6
   movementMultiplier: 8
   movDir: {x: 0, y: 0}
@@ -120,7 +120,6 @@ MonoBehaviour:
     m_Bits: 4294967295
   playerCameraTransform: {fileID: 1032128185831325176}
   objectGrabPointTransform: {fileID: 3627581780814717603}
-  rayRange: 2
 --- !u!114 &56771531150990124
 MonoBehaviour:
   m_ObjectHideFlags: 0

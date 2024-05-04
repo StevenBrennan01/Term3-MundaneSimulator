@@ -5,19 +5,20 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField]
+
     private int currentScore;
 
     [SerializeField]
     private TMP_Text quotaValueText;
 
     [SerializeField]
-    private int quotaRecquired;
+    private int quotaGoalValue;
 
     private void Awake()
     {
         currentScore = 0;
-        quotaRecquired = 50;
+        quotaGoalValue = 50;
+
         quotaValueText.text = "Quota: " + currentScore + " / 50";
     }
 
@@ -34,7 +35,7 @@ public class ScoreManager : MonoBehaviour
 
     private void WinStatement()
     {
-        if (currentScore >= quotaRecquired)
+        if (currentScore >= quotaGoalValue)
         {
             // win scene or display UI here
             Debug.Log("You have won the game!");

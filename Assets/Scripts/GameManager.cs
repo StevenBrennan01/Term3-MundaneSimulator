@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    private audioManager _audioManagerSCR;
+
     [SerializeField]
     private GameObject[] trashObjects;
 
@@ -29,10 +31,13 @@ public class GameManager : MonoBehaviour
     {
         if (trashObjects.Length == 0) Debug.LogError("No trash assigned, assign some in the inspector");
         if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned");   
+            
+        _audioManagerSCR = GetComponent<audioManager>();
     }
 
     private void Start()
     {
+        _audioManagerSCR.BackroundAmbience();
         SpawnTrash();
     }
 

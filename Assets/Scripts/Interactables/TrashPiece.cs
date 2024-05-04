@@ -15,10 +15,12 @@ public class TrashPiece : MonoBehaviour
 
     private void Awake()
     {
-        trashBagRB = GetComponent<Rigidbody>();
+        trashBagRB = GetComponent<Rigidbody>(); //for getting components and scripts on the gameobject
         myCollider = GetComponent<Collider>();
 
-        _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>();
+        _scoreManagerSCR = FindObjectOfType<ScoreManager>(); //for getting scripts located elsewhere in the project (memory or gameobject)
+
+        _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>(); //for getting scripts located elsewhere, but explicitly showing where it would be found.
     }
 
     public void GrabObject(Transform objectGrabPointTransform)
