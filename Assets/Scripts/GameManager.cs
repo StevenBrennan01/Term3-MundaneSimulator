@@ -30,15 +30,15 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (trashObjects.Length == 0) Debug.LogError("No trash assigned, assign some in the inspector");
-        if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned");   
+        if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned in inspector");   
             
         _audioManagerSCR = GetComponent<audioManager>();
     }
 
     private void Start()
     {
-        _audioManagerSCR.BackroundAmbience();
         SpawnTrash();
+        _audioManagerSCR.BackroundAmbience();
     }
 
     private void SpawnTrash()

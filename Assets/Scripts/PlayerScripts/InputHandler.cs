@@ -7,60 +7,60 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class InputHandler : MonoBehaviour
 {
-    private PlayerInputActions InputActions; //auto generated script
-    private PlayerController ControllerSCR;
-    private PlayerPickup InteractSCR;
+    private PlayerInputActions _inputActionsSCR; //auto generated script
+    private PlayerController _playerControllerSCR;
+    private PlayerPickup _playerPickupSCR;
 
-    private Coroutine MoveCR;
+    private Coroutine moveCR;
 
-    private bool IsMoving;
+    private bool isMoving;
 
     private void Awake()
     {
-        InputActions = new PlayerInputActions();
-        ControllerSCR = GetComponent<PlayerController>();
-        InteractSCR = GetComponent<PlayerPickup>();
+        _inputActionsSCR = new PlayerInputActions();
+        _playerControllerSCR = GetComponent<PlayerController>();
+        _playerPickupSCR = GetComponent<PlayerPickup>();
     }
 
     private void OnEnable()
     {
-        InputActions.Player.Movement.Enable();
-        InputActions.Player.Movement.performed += MovementActionPerformed;
-        InputActions.Player.Movement.canceled += MovementActionCanceled;
+        _inputActionsSCR.Player.Movement.Enable();
+        _inputActionsSCR.Player.Movement.performed += MovementActionPerformed;
+        _inputActionsSCR.Player.Movement.canceled += MovementActionCanceled;
 
-        InputActions.Player.Interact.Enable();
-        InputActions.Player.Interact.performed += InteractButton;
+        _inputActionsSCR.Player.Interact.Enable();
+        _inputActionsSCR.Player.Interact.performed += InteractButton;
     }
 
     private void OnDisable()
     {
-        InputActions.Player.Movement.Disable();
-        InputActions.Player.Movement.performed -= MovementActionPerformed;
-        InputActions.Player.Movement.canceled -= MovementActionCanceled;
+        _inputActionsSCR.Player.Movement.Disable();
+        _inputActionsSCR.Player.Movement.performed -= MovementActionPerformed;
+        _inputActionsSCR.Player.Movement.canceled -= MovementActionCanceled;
 
-        InputActions.Player.Interact.Disable();
-        InputActions.Player.Interact.performed -= InteractButton;
+        _inputActionsSCR.Player.Interact.Disable();
+        _inputActionsSCR.Player.Interact.performed -= InteractButton;
     }
 
     #region Movement Method , Performed & Canceled
     private void MovementActionPerformed(InputAction.CallbackContext value)
     {
-        ControllerSCR.movDir = value.ReadValue<Vector2>();
-        IsMoving = true;
-        if (MoveCR == null)
+        _playerControllerSCR.movDir = value.ReadValue<Vector2>();
+        isMoving = true;
+        if (moveCR == null)
         {
-            MoveCR = StartCoroutine(CR_MoveUpdate());
+            moveCR = StartCoroutine(CR_MoveUpdate());
         }
     }
 
     private void MovementActionCanceled(InputAction.CallbackContext value)
     {
-        ControllerSCR.movDir = value.ReadValue<Vector2>();
-        IsMoving = false;
-        if (MoveCR != null)
+        _playerControllerSCR.movDir = value.ReadValue<Vector2>();
+        isMoving = false;
+        if (moveCR != null)
         {
-            StopCoroutine(MoveCR);
-            MoveCR = null;
+            StopCoroutine(moveCR);
+            moveCR = null;
         }
     }
     #endregion
@@ -68,15 +68,15 @@ public class InputHandler : MonoBehaviour
     #region Interact Method
     private void InteractButton(InputAction.CallbackContext button)
     {
-        InteractSCR.ObjectInteract();
+        _playerPickupSCR.ObjectInteract();
     }
     #endregion
 
     IEnumerator CR_MoveUpdate()
     {
-        while (IsMoving)
+        while (isMoving)
         {
-            ControllerSCR.Walk();
+            _playerControllerSCR.Walk();
             yield return null; //make sure to return null, this is what was missing
         }
     }

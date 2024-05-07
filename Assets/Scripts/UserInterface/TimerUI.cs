@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CountdownTimer : MonoBehaviour
+public class TimerUI : MonoBehaviour
 {
-    public static CountdownTimer instance;
+    public static TimerUI instance;
 
     [SerializeField]
     private TextMeshProUGUI timeText;

@@ -30251,7 +30251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quotaValueText: {fileID: 2117783980}
-  quotaGoalValue: 0
+  quotaGoalValue: 50
 --- !u!114 &2127440120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30802,9 +30802,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 2096124860498101230, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
-      propertyPath: movementMultiplier
-      value: 8
+    - target: {fileID: 2212799690065714035, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212799690065714035, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212799690065714035, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.9979734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212799690065714035, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.83962256
       objectReference: {fileID: 0}
     - target: {fileID: 2608082719907918032, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30846,27 +30858,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3560744444576007598, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3560744444576007598, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3560744444576007598, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.9645257
-      objectReference: {fileID: 0}
-    - target: {fileID: 3560744444576007598, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.7122642
+    - target: {fileID: 2959744308640410214, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: cameraHoldPointTransform
+      value: 
+      objectReference: {fileID: 2453642050561975883}
+    - target: {fileID: 8393562548090770941, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+--- !u!4 &2453642050561975883 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8393562548090770941, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+  m_PrefabInstance: {fileID: 2453642050561975882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5452742279103220726
 PrefabInstance:
   m_ObjectHideFlags: 0

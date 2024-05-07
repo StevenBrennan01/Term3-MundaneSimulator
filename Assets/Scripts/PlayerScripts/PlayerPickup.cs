@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerPickup : MonoBehaviour
 {
+    private TrashPiece _trashPieceSCR;
+
     [SerializeField]
     private LayerMask pickupLayerMask;
 
@@ -13,28 +15,26 @@ public class PlayerPickup : MonoBehaviour
     private Transform playerCameraTransform;
 
     [SerializeField]
-    private Transform objectGrabPointTransform;
+    private Transform cameraHoldPointTransform;
 
     private float rayRange = 2.55f;
 
-    private TrashPiece _trashPieceSCR;
-
-    private RaycastHit raycastHit;
+    private RaycastHit rayCastHit;
 
     private void Update()
-    { // ==!!   remove update when game is complete   !!==
-        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.magenta);
-    } // ==!!   remove update when game is complete   !!==
-
+    { // ==!!   remove update when ready to build  !!==
+        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.red);
+    } // ==!!   remove update when ready to build  !!==
+    
     public void ObjectInteract()
     {
         if (_trashPieceSCR == null) //player is not currently holding an object
         {
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out raycastHit, rayRange, pickupLayerMask))
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
             {
-                if (raycastHit.transform.TryGetComponent(out _trashPieceSCR))
+                if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR))
                 {
-                    _trashPieceSCR.GrabObject(objectGrabPointTransform);
+                    _trashPieceSCR.GrabObject(cameraHoldPointTransform);
                 }
             } 
         }
