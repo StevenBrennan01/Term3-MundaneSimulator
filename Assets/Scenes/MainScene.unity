@@ -30145,9 +30145,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2127440117}
   - component: {fileID: 2127440118}
-  - component: {fileID: 2127440122}
   - component: {fileID: 2127440119}
   - component: {fileID: 2127440120}
+  - component: {fileID: 2127440122}
   - component: {fileID: 2127440121}
   m_Layer: 0
   m_Name: GameManager
