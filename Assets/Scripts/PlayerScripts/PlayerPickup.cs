@@ -8,14 +8,9 @@ public class PlayerPickup : MonoBehaviour
 {
     private TrashPiece _trashPieceSCR;
 
-    [SerializeField]
-    private LayerMask pickupLayerMask;
-
-    [SerializeField]
-    private Transform playerCameraTransform;
-
-    [SerializeField]
-    private Transform objectHoldPointTransform;
+    [SerializeField] private LayerMask pickupLayerMask;
+    [SerializeField] private Transform playerCameraTransform;
+    [SerializeField] private Transform objectHoldPointTransform;
 
     private float rayRange = 2.55f;
 
@@ -34,10 +29,10 @@ public class PlayerPickup : MonoBehaviour
                     _trashPieceSCR.GrabObject(objectHoldPointTransform);
                 }
             }
-
             isHolding = true;
 
             //try and put throw code here then into input handler
+            //rb.AddForce(transform forward * throwForce, ForceMode2D.Impulse) * time.deltatime?;
 
         }
         else //player is holding an object

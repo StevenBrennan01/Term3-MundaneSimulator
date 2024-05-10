@@ -12,11 +12,9 @@ public class GameManager : MonoBehaviour
     [Header("= Object Spawner =")]
     [Space(15)]
 
-    [SerializeField]
-    private GameObject[] trashObjects;
+    [SerializeField] private GameObject[] trashObjects;
 
-    [SerializeField]
-    private Transform[] spawnPositions;
+    [SerializeField] private Transform[] spawnPositions;
 
     private int spawnAmount;
 
@@ -24,11 +22,9 @@ public class GameManager : MonoBehaviour
         [Header("(# of Trash spawned is random between min and max set)")]
         [Space(15)]
 
-    [SerializeField]
-    private int minToSpawn;
+    [SerializeField] private int minToSpawn;
 
-    [SerializeField]
-    private int maxToSpawn;
+    [SerializeField] private int maxToSpawn;
 
     private void Awake()
     {
