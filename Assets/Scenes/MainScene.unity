@@ -30802,6 +30802,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2096124860498101230, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: playerDrag
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139148451835466308, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2212799690065714035, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
       propertyPath: m_ClearFlags
       value: 2

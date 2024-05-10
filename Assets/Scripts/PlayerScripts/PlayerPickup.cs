@@ -20,11 +20,6 @@ public class PlayerPickup : MonoBehaviour
     private float rayRange = 2.55f;
 
     private RaycastHit rayCastHit;
-
-    private void Update()
-    { // ==!!   remove update when ready to build  !!==
-        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward * rayRange, Color.red);
-    } // ==!!   remove update when ready to build  !!==
     
     public void ObjectInteract()
     {
