@@ -30,6 +30,11 @@ public class InputHandler : MonoBehaviour
 
         _inputActionsSCR.Player.Interact.Enable();
         _inputActionsSCR.Player.Interact.performed += InteractButton;
+
+        _inputActionsSCR.Player.ThrowObject.Enable();
+        _inputActionsSCR.Player.ThrowObject.performed += ThrowObjectPerformed;
+        //_inputActionsSCR.Player.ThrowObject.canceled += ThrowObjectPerformed;
+
     }
 
     private void OnDisable()
@@ -42,7 +47,6 @@ public class InputHandler : MonoBehaviour
         _inputActionsSCR.Player.Interact.performed -= InteractButton;
     }
 
-    #region Movement Method , Performed & Canceled
     private void MovementActionPerformed(InputAction.CallbackContext value)
     {
         _playerControllerSCR.movDir = value.ReadValue<Vector2>();
@@ -63,14 +67,6 @@ public class InputHandler : MonoBehaviour
             moveCR = null;
         }
     }
-    #endregion
-
-    #region Interact Method
-    private void InteractButton(InputAction.CallbackContext button)
-    {
-        _playerPickupSCR.ObjectInteract();
-    }
-    #endregion
 
     IEnumerator CR_MoveUpdate()
     {
@@ -78,6 +74,22 @@ public class InputHandler : MonoBehaviour
         {
             _playerControllerSCR.Walk();
             yield return null; //make sure to return null, this is what was missing
+        }
+    }
+
+    private void InteractButton(InputAction.CallbackContext button)
+    {
+        _playerPickupSCR.ObjectInteract();
+    }
+
+    private void ThrowObjectPerformed(InputAction.CallbackContext button)
+    {
+        // check if holding (isHolding = true)
+
+        if (_playerPickupSCR.isHolding)
+        {
+            // throw object 
+            Debug.Log("Object thrown!");
         }
     }
 }

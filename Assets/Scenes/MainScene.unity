@@ -30870,6 +30870,10 @@ PrefabInstance:
       propertyPath: cameraHoldPointTransform
       value: 
       objectReference: {fileID: 2453642050561975883}
+    - target: {fileID: 2959744308640410214, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
+      propertyPath: objectHoldPointTransform
+      value: 
+      objectReference: {fileID: 2453642050561975883}
     - target: {fileID: 8393562548090770941, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.002

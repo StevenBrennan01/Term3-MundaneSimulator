@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class TrashPiece : MonoBehaviour
 {
-    private Transform objectGrabPointTransform;
-    private Rigidbody trashBagRB;
+    private Transform objectHoldPointTransform;
     private Collider myCollider;
+    private Rigidbody trashBagRB;
 
     private ScoreManager _scoreManagerSCR;
 
@@ -33,26 +34,26 @@ public class TrashPiece : MonoBehaviour
     #region ObjectInteraction
     public void GrabObject(Transform objectGrabPointTransform)
     {
-        this.objectGrabPointTransform = objectGrabPointTransform;
+        this.objectHoldPointTransform = objectGrabPointTransform;
         trashBagRB.useGravity = false; //disables the trash from falling
         myCollider.enabled = false; //disables collider when held
     }
 
     public void DropObject()
     {
-        this.objectGrabPointTransform = null;
+        this.objectHoldPointTransform = null;
         trashBagRB.useGravity = true;
         myCollider.enabled = true;
     }
 
     private void FixedUpdate()
     {
-        if (objectGrabPointTransform != null)
+        if (objectHoldPointTransform != null)
         {
             float lerpValue = 20f;
 
-            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
-            transform.rotation = objectGrabPointTransform.rotation;
+            Vector3 newPosition = Vector3.Lerp(transform.position, objectHoldPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
+            transform.rotation = objectHoldPointTransform.rotation;
             transform.Rotate(0, -90, 0);
             trashBagRB.MovePosition(newPosition);
         }

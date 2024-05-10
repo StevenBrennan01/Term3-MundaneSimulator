@@ -15,28 +15,36 @@ public class PlayerPickup : MonoBehaviour
     private Transform playerCameraTransform;
 
     [SerializeField]
-    private Transform cameraHoldPointTransform;
+    private Transform objectHoldPointTransform;
 
     private float rayRange = 2.55f;
 
     private RaycastHit rayCastHit;
+
+    [HideInInspector] public bool isHolding = false;
     
     public void ObjectInteract()
     {
         if (_trashPieceSCR == null) //player is not currently holding an object
         {
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask)) //detecting for layermask
             {
-                if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR))
+                if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR)) //checking if layer has script
                 {
-                    _trashPieceSCR.GrabObject(cameraHoldPointTransform);
+                    _trashPieceSCR.GrabObject(objectHoldPointTransform);
                 }
-            } 
+            }
+
+            isHolding = true;
+
+            //try and put throw code here then into input handler
+
         }
         else //player is holding an object
         {
             _trashPieceSCR.DropObject();
             _trashPieceSCR = null;
+            isHolding = false;
         }
     }
 }
