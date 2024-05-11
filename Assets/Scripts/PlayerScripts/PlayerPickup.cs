@@ -31,8 +31,9 @@ public class PlayerPickup : MonoBehaviour
             }
             isHolding = true;
 
-            //try and put throw code here then into input handler
-            //rb.AddForce(transform forward * throwForce, ForceMode2D.Impulse) * time.deltatime?;
+            // try and put throw code here then into input handler
+            // will need to grab trashpiece rb first
+            // rb.AddForce(transform forward * throwForce, ForceMode2D.Impulse) * time.deltatime?;
 
         }
         else //player is holding an object

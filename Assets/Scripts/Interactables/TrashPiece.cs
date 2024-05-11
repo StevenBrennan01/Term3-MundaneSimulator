@@ -7,16 +7,16 @@ public class TrashPiece : MonoBehaviour
 {
     private Transform objectHoldPointTransform;
     private Collider myCollider;
-    private Rigidbody trashBagRB;
+    private Rigidbody trashRB;
 
     private ScoreManager _scoreManagerSCR;
 
     [SerializeField]
-    private int objectValue;
+    private int trashValue;
 
     private void Awake()
     {
-        trashBagRB = GetComponent<Rigidbody>();
+        trashRB = GetComponent<Rigidbody>();
         myCollider = GetComponent<Collider>();
 
         _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>(); 
@@ -26,7 +26,7 @@ public class TrashPiece : MonoBehaviour
     {
         if (other.gameObject.tag == "trashCollect")
         {
-            _scoreManagerSCR.IncreaseQuota(objectValue);
+            _scoreManagerSCR.IncreaseQuota(trashValue);
             Destroy(this.gameObject);
         }
     }
@@ -35,14 +35,14 @@ public class TrashPiece : MonoBehaviour
     public void GrabObject(Transform objectGrabPointTransform)
     {
         this.objectHoldPointTransform = objectGrabPointTransform;
-        trashBagRB.useGravity = false; //disables the trash from falling
+        trashRB.useGravity = false; //disables the trash from falling
         myCollider.enabled = false; //disables collider when held
     }
 
     public void DropObject()
     {
         this.objectHoldPointTransform = null;
-        trashBagRB.useGravity = true;
+        trashRB.useGravity = true;
         myCollider.enabled = true;
     }
 
@@ -55,7 +55,7 @@ public class TrashPiece : MonoBehaviour
             Vector3 newPosition = Vector3.Lerp(transform.position, objectHoldPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
             transform.rotation = objectHoldPointTransform.rotation;
             transform.Rotate(0, -90, 0);
-            trashBagRB.MovePosition(newPosition);
+            trashRB.MovePosition(newPosition);
         }
     }
     #endregion

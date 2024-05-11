@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-
     private int currentScore;
 
     [SerializeField]

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private int spawnAmount;
 
-    [Header("= Spawn Values =")]
+        [Header("= Spawn Values =")]
         [Header("(# of Trash spawned is random between min and max set)")]
         [Space(15)]
 
