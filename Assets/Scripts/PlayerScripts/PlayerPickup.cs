@@ -22,7 +22,7 @@ public class PlayerPickup : MonoBehaviour
     {
         if (_trashPieceSCR == null) //player is not currently holding an object
         {
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask)) //detecting for layermask
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
             {
                 if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR)) //checking if layer has script
                 {
