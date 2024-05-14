@@ -12,8 +12,7 @@ public class TrashPiece : MonoBehaviour
     
     [HideInInspector] public Rigidbody trashRB;
 
-    [SerializeField]
-    private int trashValue;
+    [SerializeField] private int trashValue;
 
     private void Awake()
     {

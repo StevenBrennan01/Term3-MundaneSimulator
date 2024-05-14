@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
 
     [SerializeField] private float moveSpeed = 200f;
-    [SerializeField] private float playerDrag; //drag to stop player speeding up
-    [SerializeField] private float movementMultiplier; //increases speed to mitigate drag
+    [SerializeField] private float playerDrag; //Drag to stop player speeding up
+    [SerializeField] private float movementMultiplier; //Increases speed to mitigate drag
 
     private Rigidbody rb;
 
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; //physics wont affect player rotation
+        rb.freezeRotation = true; //So physics won't affect player rotation
     }
 
     private void Update()

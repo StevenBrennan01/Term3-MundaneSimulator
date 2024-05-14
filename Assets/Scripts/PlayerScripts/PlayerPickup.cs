@@ -19,7 +19,7 @@ public class PlayerPickup : MonoBehaviour
 
     public void ObjectInteract()
     {
-        if (_trashPieceSCR == null) //player is not currently holding an object
+        if (_trashPieceSCR == null) //player is NOT currently holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
             {
@@ -29,9 +29,9 @@ public class PlayerPickup : MonoBehaviour
                 }
             }
             isHolding = true;
-
         }
-        else //player is holding an object
+
+        else
         {
             _trashPieceSCR.DropObject();
             _trashPieceSCR = null;
@@ -43,9 +43,8 @@ public class PlayerPickup : MonoBehaviour
     {
         if (isHolding)
         {
-            //_trashPieceSCR.trashRB.isKinematic = false;
             _trashPieceSCR.DropObject();
-            _trashPieceSCR.trashRB.AddForce(transform.forward * throwForce, ForceMode.Impulse);
+            _trashPieceSCR.trashRB.AddForce(objectHoldPointTransform.forward * throwForce * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }
