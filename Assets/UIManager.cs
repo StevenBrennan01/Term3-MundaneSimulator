@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject timerUI;
     [SerializeField] private GameObject crosshairUI;
 
+    private Coroutine controlsUI_CR;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        controlsUI_CR = StartCoroutine(CR_DisableControlsUI());
     }
 
     // Update is called once per frame
@@ -20,4 +22,12 @@ public class UIManager : MonoBehaviour
     {
         
     }
+
+    IEnumerator CR_DisableControlsUI()
+    {
+        yield return new WaitForSeconds(10);
+        controlsUI.SetActive(false);
+    }
+
+
 }
