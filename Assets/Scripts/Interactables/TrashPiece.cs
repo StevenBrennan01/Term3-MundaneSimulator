@@ -9,7 +9,8 @@ public class TrashPiece : MonoBehaviour
 
     private Transform objectHoldPointTransform;
     private Collider trashCollider;
-    public Rigidbody trashRB;
+    
+    [HideInInspector] public Rigidbody trashRB;
 
     [SerializeField]
     private int trashValue;

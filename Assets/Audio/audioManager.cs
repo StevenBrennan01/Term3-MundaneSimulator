@@ -7,16 +7,18 @@ public class audioManager : MonoBehaviour
     [Header("= Audio Manager =")]
     [Space(10)]
 
-    [SerializeField]
-    private AudioSource ambienceAudio;
+    [SerializeField] private AudioSource ambienceAudio;
+    [SerializeField] private AudioSource musicAudio;
 
     private void Awake()
     {
         ambienceAudio = GetComponent<AudioSource>();
+        musicAudio = GetComponent<AudioSource>();
     }
 
     public void BackroundAmbience()
     {
         ambienceAudio.Play();
+        musicAudio.Play();
     }
 }

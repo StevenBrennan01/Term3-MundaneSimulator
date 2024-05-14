@@ -15,7 +15,6 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private float throwForce = 10f;
 
     private float rayRange = 2.55f;
-
     private RaycastHit rayCastHit;
 
     public void ObjectInteract()
@@ -44,7 +43,7 @@ public class PlayerPickup : MonoBehaviour
     {
         if (isHolding)
         {
-            _trashPieceSCR.trashRB.isKinematic = false;
+            //_trashPieceSCR.trashRB.isKinematic = false;
             _trashPieceSCR.DropObject();
             _trashPieceSCR.trashRB.AddForce(transform.forward * throwForce, ForceMode.Impulse);
         }

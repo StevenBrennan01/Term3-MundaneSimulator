@@ -8,9 +8,7 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
 
     [SerializeField] private float moveSpeed = 200f;
-
     [SerializeField] private float playerDrag; //drag to stop player speeding up
-
     [SerializeField] private float movementMultiplier; //increases speed to mitigate drag
 
     private Rigidbody rb;
