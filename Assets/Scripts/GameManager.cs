@@ -9,21 +9,23 @@ public class GameManager : MonoBehaviour
 {
     private audioManager _audioManagerSCR;
 
+    #region Inspector Header & Spacing
     [Header("= Object Spawner =")]
     [Space(15)]
+    #endregion
 
     [SerializeField] private GameObject[] trashObjects;
-
     [SerializeField] private Transform[] spawnPositions;
 
     private int spawnAmount;
 
-        [Header("= Spawn Values =")]
-        [Header("(# of Trash spawned is random between min and max set)")]
-        [Space(15)]
+    #region Inspector Header & Spacing
+    [Header("= Spawn Values =")]
+    [Header("(# of Trash spawned is random between min and max set)")]
+    [Space(15)]
+    #endregion
 
     [SerializeField] private int minToSpawn;
-
     [SerializeField] private int maxToSpawn;
 
     private void Awake()

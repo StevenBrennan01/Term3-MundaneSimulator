@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class audioManager : MonoBehaviour
 {
-    [Header("= Audio Manager =")]
-    [Space(10)]
-
     [SerializeField] private AudioSource ambienceAudio;
     [SerializeField] private AudioSource musicAudio;
 

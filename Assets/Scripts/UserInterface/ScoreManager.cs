@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text quotaValueText;
+
+    [SerializeField] private int quotaGoalValue;
+
     private int currentScore;
-
-    [SerializeField]
-    private TMP_Text quotaValueText;
-
-    [SerializeField]
-    private int quotaGoalValue;
 
     private void Awake()
     {

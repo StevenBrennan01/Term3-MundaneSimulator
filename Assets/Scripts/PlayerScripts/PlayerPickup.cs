@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
@@ -8,11 +7,24 @@ public class PlayerPickup : MonoBehaviour
     private TrashPiece _trashPieceSCR;
 
     [SerializeField] private LayerMask pickupLayerMask;
+
+    #region Inspector Header & Spacing
+    [Header("= Set Transforms =")]
+    [Space(10)]
+    #endregion
+
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform objectHoldPointTransform;
 
+    #region Inspector Header & Spacing
+    [Header("= Throw Values =")]
+    [Space(10)]
+    #endregion
+
+    [SerializeField] private float objectThrowForce;
+    [SerializeField] private float objectSpinForce;
+
     [HideInInspector] public bool isHolding = false;
-    [SerializeField] private float throwForce = 10f;
 
     private float rayRange = 2.55f;
     private RaycastHit rayCastHit;
@@ -23,7 +35,7 @@ public class PlayerPickup : MonoBehaviour
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
             {
-                if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR)) //checking if layer has script
+                if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR)) //Checks if hit layer has _trashPieceSCR
                 {
                     _trashPieceSCR.GrabObject(objectHoldPointTransform);
                 }
@@ -43,8 +55,15 @@ public class PlayerPickup : MonoBehaviour
     {
         if (isHolding)
         {
+            Rigidbody trashRB = _trashPieceSCR.trashRB;
+
+            //Returns gravity to object and throws Trash
             _trashPieceSCR.DropObject();
-            _trashPieceSCR.trashRB.AddForce(objectHoldPointTransform.forward * throwForce * Time.deltaTime, ForceMode.Impulse);
+            trashRB.AddForce(objectHoldPointTransform.forward * objectThrowForce * Time.deltaTime, ForceMode.Impulse);
+
+            //Spins object when thrown
+            Vector3 randAngularVelocity = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * objectSpinForce * Time.deltaTime;
+            trashRB.angularVelocity = randAngularVelocity;
         }
     }
 }
