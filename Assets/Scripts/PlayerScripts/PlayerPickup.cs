@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -12,12 +11,13 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform objectHoldPointTransform;
 
+    [HideInInspector] public bool isHolding = false;
+    [SerializeField] private float throwForce = 10f;
+
     private float rayRange = 2.55f;
 
     private RaycastHit rayCastHit;
 
-    [HideInInspector] public bool isHolding = false;
-    
     public void ObjectInteract()
     {
         if (_trashPieceSCR == null) //player is not currently holding an object
@@ -31,16 +31,22 @@ public class PlayerPickup : MonoBehaviour
             }
             isHolding = true;
 
-            // try and put throw code here then into input handler
-            // will need to grab trashpiece rb first
-            // rb.AddForce(transform forward * throwForce, ForceMode2D.Impulse) * time.deltatime?;
-
         }
         else //player is holding an object
         {
             _trashPieceSCR.DropObject();
             _trashPieceSCR = null;
             isHolding = false;
+        }
+    }
+
+    public void ObjectThrow()
+    {
+        if (isHolding)
+        {
+            _trashPieceSCR.trashRB.isKinematic = false;
+            _trashPieceSCR.DropObject();
+            _trashPieceSCR.trashRB.AddForce(transform.forward * throwForce, ForceMode.Impulse);
         }
     }
 }

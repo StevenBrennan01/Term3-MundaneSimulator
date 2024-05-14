@@ -32,9 +32,7 @@ public class InputHandler : MonoBehaviour
         _inputActionsSCR.Player.Interact.performed += InteractButton;
 
         _inputActionsSCR.Player.ThrowObject.Enable();
-        _inputActionsSCR.Player.ThrowObject.performed += ThrowObjectPerformed;
-        //_inputActionsSCR.Player.ThrowObject.canceled += ThrowObjectPerformed;
-
+        _inputActionsSCR.Player.ThrowObject.performed += ThrowObjectButton;
     }
 
     private void OnDisable()
@@ -82,14 +80,8 @@ public class InputHandler : MonoBehaviour
         _playerPickupSCR.ObjectInteract();
     }
 
-    private void ThrowObjectPerformed(InputAction.CallbackContext button)
+    private void ThrowObjectButton(InputAction.CallbackContext button)
     {
-        // check if holding (isHolding = true)
-
-        if (_playerPickupSCR.isHolding)
-        {
-            // throw object 
-            Debug.Log("Object thrown!");
-        }
+        _playerPickupSCR.ObjectThrow();
     }
 }

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class TrashPiece : MonoBehaviour
 {
-    private Transform objectHoldPointTransform;
-    private Collider myCollider;
-    private Rigidbody trashRB;
-
     private ScoreManager _scoreManagerSCR;
+
+    private Transform objectHoldPointTransform;
+    private Collider trashCollider;
+    public Rigidbody trashRB;
 
     [SerializeField]
     private int trashValue;
@@ -17,9 +17,9 @@ public class TrashPiece : MonoBehaviour
     private void Awake()
     {
         trashRB = GetComponent<Rigidbody>();
-        myCollider = GetComponent<Collider>();
+        trashCollider = GetComponent<Collider>();
 
-        _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>(); 
+        _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,14 +36,14 @@ public class TrashPiece : MonoBehaviour
     {
         this.objectHoldPointTransform = objectGrabPointTransform;
         trashRB.useGravity = false; //disables the trash from falling
-        myCollider.enabled = false; //disables collider when held
+        trashCollider.enabled = false; //disables collider when held
     }
 
     public void DropObject()
     {
         this.objectHoldPointTransform = null;
         trashRB.useGravity = true;
-        myCollider.enabled = true;
+        trashCollider.enabled = true;  
     }
 
     private void FixedUpdate()
@@ -52,7 +52,7 @@ public class TrashPiece : MonoBehaviour
         {
             float lerpValue = 20f;
 
-            Vector3 newPosition = Vector3.Lerp(transform.position, objectHoldPointTransform.position, Time.deltaTime * lerpValue); //lerps from world position to hand
+            Vector3 newPosition = Vector3.Lerp(transform.position, objectHoldPointTransform.position, Time.deltaTime * lerpValue);
             transform.rotation = objectHoldPointTransform.rotation;
             transform.Rotate(0, -90, 0);
             trashRB.MovePosition(newPosition);
