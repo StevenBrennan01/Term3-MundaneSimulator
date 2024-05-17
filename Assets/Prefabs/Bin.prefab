@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2627125405258776626}
   m_Layer: 0
   m_Name: BinTrashCollect
-  m_TagString: Untagged
+  m_TagString: trashCollect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 539874780250375164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.152, y: -0.106, z: 0.11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.152, y: -0.005, z: 0.11}
+  m_LocalScale: {x: 1, y: 1.1217, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4950227434743493316}
@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.47000003, y: 0.10738833, z: 0.44}
-  m_Center: {x: 0.056918606, y: 0.87168777, z: 0.061707485}
+  m_Size: {x: 0.478415, y: 0.0048087956, z: 0.47232422}
+  m_Center: {x: 0.052710857, y: 0.8905733, z: 0.06289004}
 --- !u!1 &1291434736136183107
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,8 +214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.60047734, y: 0.7381109, z: 0.582614}
-  m_Center: {x: -0.090471916, y: 0.36519873, z: 0.18296604}
+  m_Size: {x: 0.60047734, y: 0.984682, z: 0.582614}
+  m_Center: {x: -0.090471916, y: 0.48848215, z: 0.18296604}
 --- !u!1 &3135847394833703194
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 8419680252544824420}
   - component: {fileID: 8462162562600011909}
   - component: {fileID: 1603130747951811932}
+  - component: {fileID: 5352855929346026504}
   m_Layer: 0
   m_Name: BinUI
   m_TagString: Untagged
@@ -319,6 +320,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &5352855929346026504
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3135847394833703194}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9dd06e9117d2a45901d1c86ede257f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5489761818863510651
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,8 +418,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4288741120
+  m_fontColor: {r: 0, g: 1, b: 0.627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
