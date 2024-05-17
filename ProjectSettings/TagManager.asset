@@ -6,6 +6,8 @@ TagManager:
   tags:
   - trashCollect
   - GM
+  - Recyclable
+  - FoodTrash
   layers:
   - Default
   - TransparentFX

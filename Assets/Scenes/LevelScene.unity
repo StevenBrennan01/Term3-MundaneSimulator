@@ -20670,7 +20670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1402602672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32026,11 +32026,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2959744308640410214, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
       propertyPath: objectSpinForce
-      value: 1000
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 2959744308640410214, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
       propertyPath: objectThrowForce
-      value: 1250
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 2959744308640410214, guid: 5fd9160864fcab149bc0bd1925de1861, type: 3}
       propertyPath: cameraHoldPointTransform
