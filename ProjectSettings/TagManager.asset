@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - trashCollect
   - GM
   - Recyclable
   - FoodTrash
+  - objectCollect
+  - balIObject
   layers:
   - Default
   - TransparentFX

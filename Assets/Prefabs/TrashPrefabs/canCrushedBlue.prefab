@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashRB: {fileID: 0}
-  trashValue: 5
+  objectValue: 5
 --- !u!33 &2935502042620985845
 MeshFilter:
   m_ObjectHideFlags: 0

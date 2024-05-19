@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 714340508265494428}
   - component: {fileID: 2627125405258776626}
   m_Layer: 0
-  m_Name: BinTrashCollect
-  m_TagString: trashCollect
+  m_Name: TrashCollectTrigger
+  m_TagString: objectCollect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,8 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305f9aa5f4ee2ac4ca8255a4f41a4b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  binAnim: {fileID: 990029256222976053}
-  binUI: {fileID: 3135847394833703194}
+  setAnim: {fileID: 990029256222976053}
+  setUI: {fileID: 0}
 --- !u!1 &6983776636210139489
 GameObject:
   m_ObjectHideFlags: 0

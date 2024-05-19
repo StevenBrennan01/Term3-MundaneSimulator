@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
-    private TrashPiece _trashPieceSCR;
+    private PickableObject _pickableObjectSCR;
 
     [SerializeField] private LayerMask pickupLayerMask;
 
@@ -31,13 +31,13 @@ public class PlayerPickup : MonoBehaviour
 
     public void ObjectInteract()
     {
-        if (_trashPieceSCR == null) //player is NOT currently holding an object
+        if (_pickableObjectSCR == null) //player is NOT currently holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
             {
-                if (rayCastHit.transform.TryGetComponent(out _trashPieceSCR)) //Checks if hit layer has _trashPieceSCR
+                if (rayCastHit.transform.TryGetComponent(out _pickableObjectSCR)) //Checks if hit layer has _trashPieceSCR
                 {
-                    _trashPieceSCR.GrabObject(objectHoldPointTransform);
+                    _pickableObjectSCR.GrabObject(objectHoldPointTransform);
                 }
             }
             isHolding = true;
@@ -45,8 +45,8 @@ public class PlayerPickup : MonoBehaviour
 
         else
         {
-            _trashPieceSCR.DropObject();
-            _trashPieceSCR = null;
+            _pickableObjectSCR.DropObject();
+            _pickableObjectSCR = null;
             isHolding = false;
         }
     }
@@ -55,15 +55,18 @@ public class PlayerPickup : MonoBehaviour
     {
         if (isHolding)
         {
-            Rigidbody trashRB = _trashPieceSCR.trashRB;
+            Rigidbody objectRB = _pickableObjectSCR.objectRB;
 
-            //Returns gravity to object and throws Trash
-            _trashPieceSCR.DropObject();
-            trashRB.AddForce(objectHoldPointTransform.forward * objectThrowForce * Time.deltaTime, ForceMode.Impulse);
+            if (objectRB != null)
+            {
+                //Returns gravity to object and throws Trash
+                _pickableObjectSCR.DropObject();
+                objectRB.AddForce(objectHoldPointTransform.forward * objectThrowForce * Time.deltaTime, ForceMode.Impulse);
 
-            //Spins object when thrown
-            Vector3 randAngularVelocity = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * objectSpinForce * Time.deltaTime;
-            trashRB.angularVelocity = randAngularVelocity;
+                //Spins object when thrown
+                Vector3 randAngularVelocity = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * objectSpinForce * Time.deltaTime;
+                objectRB.angularVelocity = randAngularVelocity;
+            }
         }
     }
 }

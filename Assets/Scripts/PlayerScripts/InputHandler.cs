@@ -42,6 +42,9 @@ public class InputHandler : MonoBehaviour
 
         _inputActionsSCR.Player.Interact.Disable();
         _inputActionsSCR.Player.Interact.performed -= InteractButton;
+
+        _inputActionsSCR.Player.ThrowObject.Disable();
+        _inputActionsSCR.Player.ThrowObject.performed -= ThrowObjectButton;
     }
 
     private void MovementActionPerformed(InputAction.CallbackContext value)

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashRB: {fileID: 0}
-  trashValue: 3
+  objectValue: 4
 --- !u!33 &6143752882634769236
 MeshFilter:
   m_ObjectHideFlags: 0

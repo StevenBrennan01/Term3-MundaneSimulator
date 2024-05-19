@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3118134646696607261}
   m_Layer: 6
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: balIObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashRB: {fileID: 0}
-  trashValue: 0
+  objectValue: 4

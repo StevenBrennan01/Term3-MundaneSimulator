@@ -4,25 +4,23 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
-public class BinInteract : MonoBehaviour
+public class UITrigger : MonoBehaviour
 {
-    [SerializeField]
-    private Animator binAnim;
+    [SerializeField] private Animator setAnim;
 
-    [SerializeField]
-    private GameObject binUI;
+    [SerializeField] private GameObject setUI;
 
     private void Awake()
     {
-        binUI.SetActive(false);
+        setUI.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            binAnim.Play("BinOpen");
-            binUI.SetActive(true);
+            setAnim.Play("BinOpen");
+            setUI.SetActive(true);
         }
     }
 
@@ -30,8 +28,8 @@ public class BinInteract : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            binAnim.Play("BinClose");
-            binUI.SetActive(false);
+            setAnim.Play("BinClose");
+            setUI.SetActive(false);
         }
     }
 }

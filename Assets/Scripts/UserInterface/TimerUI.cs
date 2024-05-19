@@ -9,13 +9,12 @@ public class TimerUI : MonoBehaviour
 {
     public static TimerUI instance;
 
-    [SerializeField]
-    private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI timeText;
 
     private TimeSpan timePlaying;
 
     private bool timerGoing;
-    private float timeElapsed;
+    public float timeElapsed;
 
     private void Awake()
     {
@@ -25,6 +24,7 @@ public class TimerUI : MonoBehaviour
     private void Start()
     {
         timeText.text = "00:00";
+        //Debug.Log(float minutes + ":" float seconds);
         timeElapsed = 0;
 
         timerGoing = true;
@@ -36,11 +36,11 @@ public class TimerUI : MonoBehaviour
         timerGoing = false;
     }
 
-    private IEnumerator UpdateTimerCR()
+    public IEnumerator UpdateTimerCR()
     {
         while(timerGoing)
         {
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.deltaTime; // CHANGE TO COUNTDOWN?
             timePlaying = TimeSpan.FromSeconds(timeElapsed);
             string timePlayingStr = timePlaying.ToString("mm':'ss");
             timeText.text = timePlayingStr;
