@@ -24,7 +24,6 @@ public class TimerUI : MonoBehaviour
     private void Start()
     {
         timeText.text = "00:00";
-        //Debug.Log(float minutes + ":" float seconds);
         timeElapsed = 0;
 
         timerGoing = true;
@@ -40,7 +39,7 @@ public class TimerUI : MonoBehaviour
     {
         while(timerGoing)
         {
-            timeElapsed += Time.deltaTime; // CHANGE TO COUNTDOWN?
+            timeElapsed += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(timeElapsed);
             string timePlayingStr = timePlaying.ToString("mm':'ss");
             timeText.text = timePlayingStr;

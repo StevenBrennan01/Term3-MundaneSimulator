@@ -73,7 +73,7 @@ public class InputHandler : MonoBehaviour
         while (isMoving)
         {
             _playerControllerSCR.Walk();
-            yield return null; //make sure to return null, this is what was missing
+            yield return null;
         }
     }
 
