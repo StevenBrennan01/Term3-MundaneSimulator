@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -31,8 +32,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (trashObjects.Length == 0) Debug.LogError("No trash assigned, assign some in the inspector");
-        if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned in inspector");   
-            
+        if (spawnPositions.Length == 0) Debug.LogError("No spawn positions assigned in inspector");
+
         _audioManagerSCR = GetComponent<audioManager>();
     }
 
@@ -44,11 +45,18 @@ public class GameManager : MonoBehaviour
 
     private void SpawnTrash()
     {
-        spawnAmount = Random.Range(minToSpawn, maxToSpawn);
-        // try and make it so that only 1 object is spawned at each position
+        int spawnAmount = Random.Range(minToSpawn, maxToSpawn);
+
+        // Randomly shuffles through the spawnPositions Array
+        List<Transform> randPositions = spawnPositions.OrderBy(x => Random.value).ToList();
+
         for (int i = 0; i < spawnAmount; i++)
         {
-            Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)].transform.position, Quaternion.identity);
+            if (i >= randPositions.Count) break; // Allows only 1 to be spawned per Position
+
+            Transform spawnPosition = randPositions[i];
+            GameObject trashObject = trashObjects[Random.Range(0, trashObjects.Length)];
+            Instantiate(trashObject, spawnPosition.position, Quaternion.identity);
         }
     }
 }

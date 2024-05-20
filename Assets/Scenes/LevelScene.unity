@@ -33847,7 +33847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quotaValueText: {fileID: 2117783980}
-  quotaGoalValue: 5
+  quotaGoalValue: 75
   currentScore: 50
 --- !u!82 &2127440121
 AudioSource:
