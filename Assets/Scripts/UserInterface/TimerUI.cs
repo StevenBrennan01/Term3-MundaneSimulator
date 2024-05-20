@@ -7,13 +7,16 @@ using TMPro;
 
 public class TimerUI : MonoBehaviour
 {
-    public static TimerUI instance;
+    private static TimerUI instance;
 
     [SerializeField] private TextMeshProUGUI timeText;
 
     private TimeSpan timePlaying;
 
     private bool timerGoing;
+
+    private Coroutine updateTimer_CR;
+
     public float timeElapsed;
 
     private void Awake()
@@ -27,7 +30,7 @@ public class TimerUI : MonoBehaviour
         timeElapsed = 0;
 
         timerGoing = true;
-        StartCoroutine(UpdateTimerCR());
+        updateTimer_CR = StartCoroutine(UpdateTimerCR());
     }
 
     public void TimerStop()
@@ -35,7 +38,7 @@ public class TimerUI : MonoBehaviour
         timerGoing = false;
     }
 
-    public IEnumerator UpdateTimerCR()
+    IEnumerator UpdateTimerCR()
     {
         while(timerGoing)
         {
