@@ -12292,7 +12292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8405927, b: 0.2216981, a: 0.29803923}
+  m_Color: {r: 1, g: 0.8405927, b: 0.2216981, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21450,7 +21450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1308912502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33847,7 +33847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quotaValueText: {fileID: 2117783980}
-  quotaGoalValue: 75
+  quotaGoalValue: 5
   currentScore: 50
 --- !u!82 &2127440121
 AudioSource:
