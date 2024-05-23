@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CR_DisableWrongItemUI()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         _uiManagerSCR.wrongItemUI.SetActive(false);
     }
 }
