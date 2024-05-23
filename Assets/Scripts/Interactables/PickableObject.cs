@@ -1,31 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickableObject : MonoBehaviour
 {
     private ScoreManager _scoreManagerSCR;
+    private UIManager _uiManagerSCR;
+    private GameManager _gameManagerSCR;
 
     private Transform objectHoldPointTransform;
-    private Collider trashCollider;
+    private Collider objectCollider;
 
     [HideInInspector] public Rigidbody objectRB;
-
     [SerializeField] private int objectValue;
+
+    #region Inspector Header & Spacing
+    [Header("= Pickable Object Item List =")]
+    [Space(15)]
+    #endregion
+
+    [SerializeField] private GameObject footballItem;
+    [Space(15)]
+
+    [SerializeField] private GameObject[] binTrash;
 
     private void Awake()
     {
-        objectRB = GetComponent<Rigidbody>();
-        trashCollider = GetComponent<Collider>();
-
+        _gameManagerSCR = GameObject.FindObjectOfType<GameManager>();
+        _uiManagerSCR = GameObject.FindObjectOfType<UIManager>();
         _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>();
+
+        objectRB = GetComponent<Rigidbody>();
+        objectCollider = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "objectCollect")
+        bool trashCollectionMet = false;
+        bool objectCollectionMet = false;
+
+        if (other.gameObject.tag == "trashCollect")
+        {
+            foreach (GameObject trashItem in binTrash)
+            {
+                if (trashItem != null && trashItem.GetInstanceID() == this.gameObject.GetInstanceID())
+                {
+                    _scoreManagerSCR.IncreaseQuota(objectValue);
+                    trashCollectionMet = true;
+                    Destroy(this.gameObject);
+                    break;
+                }
+            }
+        }
+
+        if (other.gameObject.tag == "objectCollect" && gameObject == footballItem)
         {
             _scoreManagerSCR.IncreaseQuota(objectValue);
+            objectCollectionMet = true;
+            Destroy(this.gameObject);
+        }
+
+        if (!trashCollectionMet && !objectCollectionMet)
+        {
+            _gameManagerSCR.DisableWrongItemUI();
             Destroy(this.gameObject);
         }
     }
@@ -35,14 +73,14 @@ public class PickableObject : MonoBehaviour
     {
         this.objectHoldPointTransform = objectGrabPointTransform;
         objectRB.useGravity = false; //disables the trash from falling
-        trashCollider.enabled = false; //disables collider when held
+        objectCollider.enabled = false; //disables collider when held
     }
 
     public void DropObject()
     {
         this.objectHoldPointTransform = null;
         objectRB.useGravity = true;
-        trashCollider.enabled = true;  
+        objectCollider.enabled = true;  
     }
 
     private void FixedUpdate()

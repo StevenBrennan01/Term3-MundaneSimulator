@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text quotaValueText;
 
     [SerializeField] private int quotaGoalValue;
-    [SerializeField] private int currentScore;
+    [HideInInspector] private int currentScore;
 
     private void Awake()
     {

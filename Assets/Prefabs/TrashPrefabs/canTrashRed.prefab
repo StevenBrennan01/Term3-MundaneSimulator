@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2366661581239335791}
   m_Layer: 6
   m_Name: canTrashRed
-  m_TagString: Recyclable
+  m_TagString: binTrash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,8 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2a9cbef5f8aa446b547beb8ae10da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashRB: {fileID: 0}
+  objectRB: {fileID: 0}
   objectValue: 5
+  binTrash:
+  - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
+  - {fileID: 6143752882634769234, guid: 20f6fca5559075148b1e6d06957f81ea, type: 3}
+  - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
+  - {fileID: 2984268539215478521}
+  - {fileID: 10657068676566687, guid: 3af47aa23425e3c44b5be3d082a74f79, type: 3}
+  footballItem: {fileID: 3431825131745337563, guid: e1b28d7f40ba37c40a65932c1828f002, type: 3}
 --- !u!33 &4069442185370850102
 MeshFilter:
   m_ObjectHideFlags: 0

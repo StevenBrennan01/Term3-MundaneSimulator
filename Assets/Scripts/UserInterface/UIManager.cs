@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject timerUI;
     [SerializeField] private GameObject quotaCompleteUI;
     [SerializeField] private GameObject binUI;
+    public GameObject wrongItemUI;
 
     [SerializeField] private TextMeshProUGUI winText;
 
@@ -30,6 +31,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         quotaCompleteUI.SetActive(false);
+        wrongItemUI.SetActive(false);
 
         scoreUI.SetActive(true);
         timerUI.SetActive(true);

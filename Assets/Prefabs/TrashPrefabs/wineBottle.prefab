@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2787897458681892140}
   m_Layer: 6
   m_Name: wineBottle
-  m_TagString: Recyclable
+  m_TagString: binTrash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRB: {fileID: 0}
   objectValue: 8
+  binTrash:
+  - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
+  - {fileID: 6143752882634769234, guid: 20f6fca5559075148b1e6d06957f81ea, type: 3}
+  - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
+  - {fileID: 2984268539215478521, guid: 92cb02106cb3cc243808c8e62470174c, type: 3}
+  - {fileID: 10657068676566687}
+  footballItem: {fileID: 3431825131745337563, guid: e1b28d7f40ba37c40a65932c1828f002, type: 3}
 --- !u!33 &5999326650542111934
 MeshFilter:
   m_ObjectHideFlags: 0

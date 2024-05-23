@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - GM
-  - Recyclable
-  - FoodTrash
   - objectCollect
   - balIObject
+  - trashCollect
+  - binTrash
+  - animCollider
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Pickable
-  - 
+  - IgnorePickable
   - 
   - 
   - 
