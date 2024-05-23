@@ -8,6 +8,7 @@ public class PickableObject : MonoBehaviour
     private ScoreManager _scoreManagerSCR;
     private UIManager _uiManagerSCR;
     private GameManager _gameManagerSCR;
+    private audioManager _audioManagerSCR;
 
     private Transform objectHoldPointTransform;
     private Collider objectCollider;
@@ -20,7 +21,7 @@ public class PickableObject : MonoBehaviour
     [Space(15)]
     #endregion
 
-    [SerializeField] private GameObject footballItem;
+    [SerializeField] private GameObject ballItem;
     [Space(15)]
 
     [SerializeField] private GameObject[] binTrash;
@@ -29,6 +30,7 @@ public class PickableObject : MonoBehaviour
     {
         _gameManagerSCR = GameObject.FindObjectOfType<GameManager>();
         _uiManagerSCR = GameObject.FindObjectOfType<UIManager>();
+        _audioManagerSCR = GameObject.FindObjectOfType<audioManager>();
         _scoreManagerSCR = GameObject.FindGameObjectWithTag("GM").GetComponent<ScoreManager>();
 
         objectRB = GetComponent<Rigidbody>();
@@ -48,16 +50,20 @@ public class PickableObject : MonoBehaviour
                 {
                     _scoreManagerSCR.IncreaseQuota(objectValue);
                     trashCollectionMet = true;
+                    _audioManagerSCR.cashAudio.Play();
+
                     Destroy(this.gameObject);
                     break;
                 }
             }
         }
 
-        if (other.gameObject.tag == "objectCollect" && gameObject == footballItem)
+        if (other.gameObject.tag == "objectCollect" && gameObject == ballItem)
         {
             _scoreManagerSCR.IncreaseQuota(objectValue);
             objectCollectionMet = true;
+            _audioManagerSCR.cashAudio.Play();
+
             Destroy(this.gameObject);
         }
 

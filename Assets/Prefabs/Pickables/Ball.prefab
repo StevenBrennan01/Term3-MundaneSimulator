@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3143921064276464150}
+  - component: {fileID: 3118134646696607261}
   - component: {fileID: 6037780534202717554}
   - component: {fileID: 2663592689466989658}
   - component: {fileID: 6145116283263109420}
   - component: {fileID: 2081664460679569926}
-  - component: {fileID: 3118134646696607261}
   m_Layer: 6
   m_Name: Ball
   m_TagString: balIObject
@@ -31,11 +31,32 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 41.599422, y: 45.762115, z: 75.90871}
-  m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
+  m_LocalScale: {x: 0.5013977, y: 0.5013977, z: 0.5013977}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3118134646696607261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431825131745337563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2a9cbef5f8aa446b547beb8ae10da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectRB: {fileID: 0}
+  objectValue: 4
+  ballItem: {fileID: 3431825131745337563}
+  binTrash:
+  - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
+  - {fileID: 6143752882634769234, guid: 20f6fca5559075148b1e6d06957f81ea, type: 3}
+  - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
+  - {fileID: 2984268539215478521, guid: 92cb02106cb3cc243808c8e62470174c, type: 3}
+  - {fileID: 10657068676566687, guid: 3af47aa23425e3c44b5be3d082a74f79, type: 3}
 --- !u!33 &6037780534202717554
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64,7 +85,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae201b54425541545a6012eb9e7f0738, type: 2}
+  - {fileID: 2100000, guid: bc420015d6dc0834ab4083c2476d84c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,27 +152,6 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3118134646696607261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3431825131745337563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2a9cbef5f8aa446b547beb8ae10da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectRB: {fileID: 0}
-  objectValue: 4
-  binTrash:
-  - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
-  - {fileID: 6143752882634769234, guid: 20f6fca5559075148b1e6d06957f81ea, type: 3}
-  - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
-  - {fileID: 2984268539215478521, guid: 92cb02106cb3cc243808c8e62470174c, type: 3}
-  - {fileID: 10657068676566687, guid: 3af47aa23425e3c44b5be3d082a74f79, type: 3}
-  footballItem: {fileID: 3431825131745337563}

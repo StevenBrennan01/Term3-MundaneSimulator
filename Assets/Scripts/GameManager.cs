@@ -68,6 +68,8 @@ public class GameManager : MonoBehaviour
     {
         _uiManagerSCR.wrongItemUI.SetActive(true);
 
+        _audioManagerSCR.horrorAudio.Play();
+
         Coroutine wrongItemTimer_CR;
         wrongItemTimer_CR = StartCoroutine(CR_DisableWrongItemUI());
     }

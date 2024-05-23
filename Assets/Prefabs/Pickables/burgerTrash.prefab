@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.73083144, y: 0.73083144, z: 0.73083144}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,13 +50,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRB: {fileID: 0}
   objectValue: 4
+  ballItem: {fileID: 0}
   binTrash:
   - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
   - {fileID: 6143752882634769234}
   - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
   - {fileID: 2984268539215478521, guid: 92cb02106cb3cc243808c8e62470174c, type: 3}
   - {fileID: 10657068676566687, guid: 3af47aa23425e3c44b5be3d082a74f79, type: 3}
-  footballItem: {fileID: 3431825131745337563, guid: e1b28d7f40ba37c40a65932c1828f002, type: 3}
 --- !u!33 &6143752882634769236
 MeshFilter:
   m_ObjectHideFlags: 0

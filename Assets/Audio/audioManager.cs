@@ -6,6 +6,9 @@ public class audioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource ambienceAudio;
     [SerializeField] private AudioSource musicAudio;
+    [SerializeField] public AudioSource horrorAudio;
+    [SerializeField] public AudioSource cashAudio;
+
 
     private void Awake()
     {

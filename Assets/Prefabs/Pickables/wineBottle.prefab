@@ -51,13 +51,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRB: {fileID: 0}
   objectValue: 8
+  footballItem: {fileID: 3431825131745337563, guid: e1b28d7f40ba37c40a65932c1828f002, type: 3}
   binTrash:
   - {fileID: 124406358728296116, guid: 0f19a732006400947981c8a94548a823, type: 3}
   - {fileID: 6143752882634769234, guid: 20f6fca5559075148b1e6d06957f81ea, type: 3}
   - {fileID: 838242104144100082, guid: 58f288ada9f87a940a5bf6596925fbe2, type: 3}
   - {fileID: 2984268539215478521, guid: 92cb02106cb3cc243808c8e62470174c, type: 3}
   - {fileID: 10657068676566687}
-  footballItem: {fileID: 3431825131745337563, guid: e1b28d7f40ba37c40a65932c1828f002, type: 3}
 --- !u!33 &5999326650542111934
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10657068676566687}
-  m_Mesh: {fileID: -2354210494747355909, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
+  m_Mesh: {fileID: 4513051006220430973, guid: 6ee79a39487f7bb4abefb33640b1f96a, type: 3}
 --- !u!23 &8086652659629081382
 MeshRenderer:
   m_ObjectHideFlags: 0
