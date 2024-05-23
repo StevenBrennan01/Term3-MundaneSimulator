@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Player;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
@@ -28,6 +27,6 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -70f, 70f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX); //Vector3.up rotating the Y axis (Horizontal for rotation)
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 }

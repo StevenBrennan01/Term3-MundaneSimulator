@@ -15,9 +15,9 @@ public class TimerUI : MonoBehaviour
 
     private bool timerGoing;
 
-    private Coroutine updateTimer_CR;
-
     public float timeElapsed;
+
+    private Coroutine updateTimer_CR;
 
     private void Awake()
     {

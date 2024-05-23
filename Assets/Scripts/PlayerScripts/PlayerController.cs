@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Inspector Header & Spacing
     [Header("= Movement =")]
     [Space(10)]
+    #endregion
 
     [SerializeField] private float moveSpeed = 200f;
     [SerializeField] private float playerDrag; //Drag to stop player speeding up
@@ -20,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; //So physics won't affect player rotation
+        rb.freezeRotation = true; //Physics won't affect player rotation
     }
 
     private void Update()

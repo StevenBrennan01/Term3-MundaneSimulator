@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    private PlayerInputActions _inputActionsSCR; //auto generated script
+    private PlayerInputActions _inputActionsSCR;
     private PlayerController _playerControllerSCR;
     private PlayerPickup _playerPickupSCR;
 
@@ -76,7 +76,6 @@ public class InputHandler : MonoBehaviour
             yield return null;
         }
     }
-
     private void InteractButton(InputAction.CallbackContext button)
     {
         _playerPickupSCR.ObjectInteract();

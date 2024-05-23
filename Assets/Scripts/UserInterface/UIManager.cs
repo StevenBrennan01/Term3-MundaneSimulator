@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(timePassed % 60f);
 
         string timeFormatted = string.Format
-            ("{0:0}" + " Minute(s), and " + "{1:00}" + " Seconds!", minutes, seconds);
+            ("{0:0}" + " Minutes, and " + "{1:00}" + " Seconds!", minutes, seconds);
 
         winText.text = "You cleaned the park in " + timeFormatted + " Nice work!";
 

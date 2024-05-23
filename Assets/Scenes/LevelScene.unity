@@ -33273,8 +33273,8 @@ MonoBehaviour:
   - {fileID: 996578618}
   - {fileID: 1831137795}
   - {fileID: 226912810}
-  minToSpawn: 13
-  maxToSpawn: 18
+  minToSpawn: 16
+  maxToSpawn: 20
 --- !u!114 &2127440119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33288,7 +33288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quotaValueText: {fileID: 2117783980}
-  quotaGoalValue: 150
+  quotaGoalValue: 80
 --- !u!82 &2127440121
 AudioSource:
   m_ObjectHideFlags: 0

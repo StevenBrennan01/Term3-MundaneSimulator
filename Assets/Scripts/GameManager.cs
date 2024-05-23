@@ -30,8 +30,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int minToSpawn;
     [SerializeField] private int maxToSpawn;
 
-
-
     private void Awake()
     {
         _uiManagerSCR = FindObjectOfType<UIManager>();

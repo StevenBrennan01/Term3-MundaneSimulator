@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
+//using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class UITrigger : MonoBehaviour

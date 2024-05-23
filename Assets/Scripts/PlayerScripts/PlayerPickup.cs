@@ -31,11 +31,11 @@ public class PlayerPickup : MonoBehaviour
 
     public void ObjectInteract()
     {
-        if (_pickableObjectSCR == null) //player is NOT currently holding an object
+        if (_pickableObjectSCR == null) //player is NOT holding an object
         {
             if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out rayCastHit, rayRange, pickupLayerMask))
             {
-                if (rayCastHit.transform.TryGetComponent(out _pickableObjectSCR)) //Checks if hit layer has _trashPieceSCR
+                if (rayCastHit.transform.TryGetComponent(out _pickableObjectSCR))
                 {
                     _pickableObjectSCR.GrabObject(objectHoldPointTransform);
                 }
