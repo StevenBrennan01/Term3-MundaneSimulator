@@ -76,6 +76,7 @@ public class InputHandler : MonoBehaviour
             yield return null;
         }
     }
+
     private void InteractButton(InputAction.CallbackContext button)
     {
         _playerPickupSCR.ObjectInteract();
