@@ -21,6 +21,7 @@ public class PickableObject : MonoBehaviour
     #endregion
 
     [SerializeField] private GameObject ballItem;
+
     [Space(15)]
 
     [SerializeField] private GameObject[] binTrash;
