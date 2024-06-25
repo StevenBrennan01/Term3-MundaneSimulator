@@ -50,13 +50,13 @@ public class GameManager : MonoBehaviour
         int spawnAmount = Random.Range(minToSpawn, maxToSpawn);
 
         // Randomly shuffles through the spawnPositions Array
-        List<Transform> randPositions = spawnPositions.OrderBy(x => Random.value).ToList();
+        List<Transform> shufflePositions = spawnPositions.OrderBy(x => Random.value).ToList();
 
         for (int i = 0; i < spawnAmount; i++)
         {
-            if (i >= randPositions.Count) break; // Allows only 1 to be spawned per Position
+            if (i >= shufflePositions.Count) break; // Allows only 1 to be spawned per Position
 
-            Transform spawnPosition = randPositions[i];
+            Transform spawnPosition = shufflePositions[i];
             GameObject trashObject = trashObjects[Random.Range(0, trashObjects.Length)];
             Instantiate(trashObject, spawnPosition.position, Quaternion.identity);
         }
