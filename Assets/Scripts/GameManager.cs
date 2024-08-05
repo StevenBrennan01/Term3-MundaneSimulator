@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] trashObjects;
     [SerializeField] private Transform[] spawnPositions;
 
-    private int spawnAmount;
-
     #region Inspector Header & Spacing
     [Header("= Spawn Values =")]
     [Header("(# of Trash spawned is random between min and max set)")]
